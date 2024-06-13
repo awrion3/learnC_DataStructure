@@ -57,7 +57,7 @@ struct node* reverse(struct node* head)
 	{
 		last = last->next;
 	} 
-	last->next = head;
+	last->next = head; //before, this was front node
 
 	return head;
 }

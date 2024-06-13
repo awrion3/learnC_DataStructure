@@ -106,7 +106,7 @@ void insertE(struct node** h) {
 	{
 		(*h)->next = p;
 
-		p->prev = (*h)->next;
+		p->prev = *h;	//
 		p->next = NULL;
 	}
 	else

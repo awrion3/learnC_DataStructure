@@ -98,12 +98,7 @@ struct node* insertSL(struct node* head, int item)
 
 		printf("position: 1. Beg 2. Mid 3. End\n");
 		scanf("%d", &pos);
-		if (pos == 2)
-		{
-			printf("insertion location (in index): ");
-			scanf("%d", &loc);
-		}
-
+		
 		struct node* temp = head;
 
 		switch (pos) {
@@ -112,7 +107,10 @@ struct node* insertSL(struct node* head, int item)
 			head = newNode;
 			break;
 		case 2:
-			for (int i = 1; i < loc; i++)	//excludes head
+			printf("insertion location (not in index): ");
+			scanf("%d", &loc);
+
+			for (int i = 2; i < loc; i++)	//excludes head
 			{
 				if (temp->next != NULL) {
 					temp = temp->next;
@@ -150,11 +148,6 @@ struct node* deleteSL(struct node* head)
 
 		printf("position: 1. Beg 2. Mid 3. End\n");
 		scanf("%d", &pos);
-		if (pos == 2)
-		{
-			printf("deletion location (in index): ");
-			scanf("%d", &loc);
-		}
 
 		struct node* temp = head;
 
@@ -164,13 +157,17 @@ struct node* deleteSL(struct node* head)
 			head = head->next;
 			break;
 		case 2:
-			for (int i = 1; i < loc; i++)	//
+			printf("deletion location (not in index): ");
+			scanf("%d", &loc);
+
+			for (int i = 2; i < loc; i++)	//
 			{
 				if (temp->next != NULL) {
 					temp = temp->next;
 				}
 			}
 			delData = temp->next->data;
+
 			temp->next = temp->next->next;
 			break;
 		case 3:

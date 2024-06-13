@@ -69,7 +69,7 @@ struct node* mergeC(struct node* head1, struct node* head2)
 
 	struct node dummy;
 	struct node* result = &dummy;
-
+	//already two SLLs are sorted
 	while (temp1 && temp2)
 	{
 		if (temp1->data <= temp2->data)

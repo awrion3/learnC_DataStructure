@@ -39,7 +39,10 @@ void delDup(struct node* head)
 	struct node* temp;
 	struct node* dupNode;
 
-	while (curr != NULL && curr->next != NULL)  //
+	if (curr == NULL)
+		return;
+	
+	while (curr->next != NULL)  //
 	{
 		temp = curr;
 		while (temp->next != NULL) ///
